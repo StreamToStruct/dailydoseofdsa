@@ -1,0 +1,22 @@
+This took me nearly 23 minutes to solve.
+No much explanation is needed to this. Its pretty easy.
+But wanted to add one bruteforce python code which makes me remember map , join
+def plusOne(digits):
+    num = int("".join(map(str, digits)))
+    num += 1
+    return list(map(int, str(num)))
+
+[1,2,3]
+   ↓ map(str)
+["1","2","3"]
+   ↓ join
+"123"
+   ↓ int
+123
+   ↓ +1
+124
+   ↓ str
+"124"
+   ↓ map(int)
+[1,2,4]
+
