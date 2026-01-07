@@ -1,0 +1,17 @@
+961. N Repeated Elements in size 2N Array: EASYYYYYY
+  here you can learn about concept called Set in java (Simply I can say Its a collection and an Interface)
+  In this problem every element exists once only only 1 element exists more than once only 1 one element and we need to find that element.
+  class Solution {
+    public int repeatedNTimes(int[] nums) {
+        Set<Integer> seen = new HashSet<>();
+
+        for (int i : nums) {
+            if (seen.contains(i))
+                return i;
+            seen.add(i);
+        }
+        return -1;
+        
+        
+    }
+}
