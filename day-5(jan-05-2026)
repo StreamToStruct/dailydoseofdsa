@@ -1,0 +1,29 @@
+1975. Maximum Matrix Sum(Med)
+  class Solution {
+    public long maxMatrixSum(int[][] matrix) {
+       long sum = 0;
+        int negc = 0;
+        int smallabs = Integer.MAX_VALUE;
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                int val = matrix[i][j];
+
+                sum += Math.abs(val);
+
+                if (val < 0) {
+                    negc++;
+                }
+
+                smallabs = Math.min(smallabs, Math.abs(val));
+            }
+        }
+
+        if (negc % 2 == 0) {
+            return sum;
+        } else {
+            return sum - 2L * smallabs;
+        }
+    }
+
+}
