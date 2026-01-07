@@ -1,0 +1,63 @@
+1390.4 Divisors EASYYYY(Leetcode Medium)
+  class Solution {
+    int fourdivisorsum(int n){
+            int divsum=0;
+            int c=0;
+            for(int i=1;i*i<=n;i++){
+
+                if(n%i==0){
+                    if(i==n/i){
+                  divsum+=i;
+                  c=c+1;
+                    }
+                    else{
+                        divsum+=i+n/i;
+                        c=c+2;
+                    }
+                }
+            }
+            if(c==4){
+                return divsum;
+            }
+           return 0; 
+           }
+    public int sumFourDivisors(int[] nums) {
+       
+      /* int wsum=0;
+
+        
+    
+    for(int i=0;i<nums.length;i++){
+        int a=nums[i];
+          int c=0;
+     int  sum=0;
+        for(int j=1;j*j<=a;j++){
+           
+            if(a%j==0){
+              if (j == a / j) {
+            c++;
+            sum += j;
+        } else {
+            c += 2;
+            sum += j + a / j;
+        }
+            }
+        }
+      
+        if(c==4){
+              wsum=wsum+sum;
+       
+        }
+    }
+           return wsum;*/
+           int wholesum=0;
+           for(int num:nums){
+              int sum=fourdivisorsum(num);
+              wholesum=wholesum+sum;
+
+           }
+           
+    
+       return wholesum;
+    }
+}
